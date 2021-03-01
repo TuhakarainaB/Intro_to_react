@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to React</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+    const content = document.getElementById("root");
+
+        class Heading extends React.Component {
+            render()
+            {
+                return <h1>This is the heading component</h1>;
+            }
+        }
+        class Main extends React.Component {
+            render()
+            {
+                return <p>This is the main content</p>;
+            }
+        }
+        class Footer extends React.Component {
+            render()
+            {
+                return <h2>This is the footer</h2>;
+            }
+        }
+        
+        ReactDOM.render(
+            <div>
+            <Heading />
+            <Main />
+            <Footer />
+            </div>
+            , content
+        );
+    </script>
+
+
+</body>
+</html>
