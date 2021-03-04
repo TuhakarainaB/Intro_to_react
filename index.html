@@ -20,27 +20,45 @@
         class Heading extends React.Component {
             render()
             {
-                return <h1>This is the heading component</h1>;
+                return <h1>Hello {this.props.name} {this.props.lastname}, welcome to this course</h1>;
             }
         }
         class Main extends React.Component {
             render()
             {
-                return <p>This is the main content</p>;
+                return (
+                <div>
+                <p>This component will contain {this.props.content}</p>
+                <Buttonify behavior="Click Button" >Send Data</Buttonify>
+                </div>);
             }
         }
         class Footer extends React.Component {
             render()
             {
-                return <h2>This is the footer</h2>;
+                return <h2>This is the footer component and it could contain {this.props.info}</h2>;
+            }
+        }
+
+        class Buttonify extends React.Component
+        {
+            render()
+            {
+                return(
+                    <div>
+                        <button type={this.props.behavior}>
+                            {this.props.children}
+                        </button>
+                    </div>
+                );
             }
         }
         
         ReactDOM.render(
             <div>
-            <Heading />
-            <Main />
-            <Footer />
+            <Heading name="Bruce" lastname="Tuhakaraina" />
+            <Main content="training regarding react training." />
+            <Footer info="more information" />
             </div>
             , content
         );
